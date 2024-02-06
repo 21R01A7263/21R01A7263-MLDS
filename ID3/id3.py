@@ -1,58 +1,81 @@
 import pandas as pd
-import numpy as np
-df_tennis = pd.read_csv('lab3.csv')
+df=pd.read_csv("lab2dataset.csv")
+print(df)
+ 
 
-from collections import Counter
-def entropy_list(a_list):
-    cnt = Counter(x for x in a_list)
-    num_instance = len(a_list)*1.0
-    probs = [x/num_instance for x in cnt.values()]
-    return entropy(probs)
-
-import math
 def entropy(probs):
-    return sum([-prob*math.log(prob,2) for prob in probs])
+ import math
+ return sum(-prob*math.log(prob,2) for prob in probs)
 
-def info_gain(df,split,target,trace=0):
-    df_split = df.groupby(split)
-    nobs = len(df.index)*1.0
-    df_agg_ent = df_split.agg({ target:[entropy_list, lambda x: len(x)/nobs] })
-    df_agg_ent.columns = ['Entropy','PropObserved']
-    new_entropy = sum( df_agg_ent['Entropy'] * df_agg_ent["PropObserved"])
-    old_entropy = entropy_list(df[target])
-    return old_entropy - new_entropy
+def entropy_of_list(a_list):
+ from collections import Counter
+ cnt = Counter (x for x in a_list)
+ num_instances =len(a_list)
+ probs=[x/num_instances for x in cnt.values()]
+ return entropy(probs)
 
-def id3(df,target,attribute_name,default_class = None):
-    cnt = Counter(x for x in df[target])
-    if len(cnt)==1:
-        return next(iter(cnt))
-    elif df.empty or (not attribute_name):
-        return default_class
-    else:
-        default_class = max(cnt.keys())
-        gains = [info_gain(df,attr,target) for attr in attribute_name]
-        index_max = gains.index(max(gains))
-        best_attr = attribute_name[index_max]
-        tree = { best_attr:{ } }
-        remaining_attr = [x for x in attribute_name if x!=best_attr]
-        for attr_val, data_subset in df.groupby(best_attr):
-            subtree = id3(data_subset,target,remaining_attr,default_class)
-            tree[best_attr][attr_val] = subtree
-        return tree
+total_entropy= entropy_of_list(df['PlayTime'])
+print(total_entropy)
 
-def classify(instance,tree,default = None):
-    attribute = next(iter(tree))
-    if instance[attribute] in tree[attribute].keys():
-        result = tree[attribute][instance[attribute]]
-        if isinstance(result,dict):
-            return classify(instance,result)
-        else:
-            return result
-    else:
-        return default
+def information_gain(df,split_attribute_name, target_attribute_name, trace=0):
 
-attribute_names = list(df_tennis.columns)
-attribute_names.remove('PlayTennis') #Remove the class attribute
-tree = id3(df_tennis,'PlayTennis',attribute_names)
-print("\n\nThe Resultant Decision Tree is :\n")
+  df_split =df.groupby(split_attribute_name)
+  for name,group in df_split: 
+    nobs=len(df.index)*1.0
+    df_agg_ent=df_split.agg({target_attribute_name: [entropy_of_list,lambda x: len(x)/nobs] })[target_attribute_name]
+
+    avg_info=sum(df_agg_ent['entropy_of_list'] * df_agg_ent['<lambda_0>'])
+    old_entropy=entropy_of_list(df[target_attribute_name])
+    return old_entropy-avg_info   
+
+def id3DT(df, target_attribute_name, attribute_names, default_class=None):
+  from collections import Counter
+  cnt = Counter(x for x in df[target_attribute_name])
+  if len(cnt)==1:
+     return next(iter(cnt))
+  elif df.empty or (not attribute_names):
+     return default_class
+  else:
+     default_class =max(cnt.keys())
+
+     gainz=[information_gain(df,attr, target_attribute_name) for attr in attribute_names]
+     index_of_max=gainz.index(max(gainz))
+     best_attr=attribute_names[index_of_max]
+     tree={best_attr:{}}
+     remaining_attributes_names=[i for i in attribute_names if i != best_attr]
+     for attr_val, data_subset in df.groupby(best_attr):
+      subtree=id3DT(data_subset,target_attribute_name,remaining_attributes_names,default_class)
+      tree[best_attr][attr_val]=subtree
+  return tree
+
+
+attribute_names=list(df.columns)
+attribute_names.remove('PlayTime')
+from pprint import pprint
+tree= id3DT(df,'PlayTime',attribute_names)
+print("The Resultant Decision Tree is ")
 pprint(tree)
+attribute=next(iter(tree))
+print("Best Attribute: \n", attribute)
+print("Tree Keys\n ", tree[attribute].keys())
+ 
+
+def classify(instance, tree, default=None):
+  attribute=next(iter(tree))
+  print("Key:",tree.keys())
+  print("Attribute",attribute)
+  if instance[attribute] in tree[attribute].keys():
+    result=tree[attribute][instance[attribute]]
+    print("Instance Attribute:",instance[attribute], "TreeKeys:",tree[attribute].keys())
+    if isinstance(result,dict):
+       return classify(instance,result)
+    else:
+       return result
+  else:
+    return default
+
+
+tree1={'Outlook':['Rainy','Sunny'],'Temperature':['Mild','Hot'],'Humidity':['Normal','High'],'Windy':['Weak','Strong']}
+df2=pd.DataFrame(tree1)
+df2['Predicted']=df2.apply(classify,axis=1, args=(tree,'No'))
+print(df2)
