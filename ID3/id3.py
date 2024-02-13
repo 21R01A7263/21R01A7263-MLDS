@@ -40,4 +40,4 @@ plt.scatter(bill,tip, color='green')
 plt.plot(xsort[:,1],ypred[SortIndex], color = 'red', linewidth=5)
 plt.xlabel('Total bill')
 plt.ylabel('Tip')
-plt.show();
+plt.show()
