@@ -11,7 +11,7 @@ from sklearn.metrics import confusion_matrix
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import classification_report
 
-y_pred=knn.predict(X_test)
+y_pred1=knn.predict(X_test)
 cm=confusion_matrix(y_test, y_pred)
 print(cm)
 print("Correct prediction", accuracy_score(y_test, y_pred))
