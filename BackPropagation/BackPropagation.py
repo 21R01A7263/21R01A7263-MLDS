@@ -43,6 +43,6 @@ bout+= np.sum(d_output, axis=0, keepdims = True) * lr
 wh+= x.T.dot(d_hiddenlayer)*lr
 bh+= np.sum(d_hiddenlayer, axis=0, keepdims = True) * lr
 
-print("Actualoutput\n"+str(y))
+print("Actual Output\n"+str(y))
 print("Predicted Output\n"+str(output))
 print("Error\n"+str(EO))
