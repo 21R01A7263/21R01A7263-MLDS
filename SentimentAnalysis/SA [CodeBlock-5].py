@@ -1,0 +1,8 @@
+print(tweets[0].id)
+print(tweets[0].created_at)
+print(tweets[0].source)
+print(tweets[0].favourite_count)
+print(tweets[0].retweet_count)
+print(tweets[0].geo)
+print(tweets[0].coordinates)
+print(tweets[0].entities)
