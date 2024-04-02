@@ -1,0 +1,2 @@
+train['Credit_History'].fillna(train['Credit_History'].mode()[0],inplace=True)
+print(train['Credit_History'])

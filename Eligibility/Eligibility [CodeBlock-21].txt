@@ -1,0 +1,2 @@
+train['Dependents'].fillna(train['Dependents'].mode()[0],inplace=True)
+print(train['Dependents'])
