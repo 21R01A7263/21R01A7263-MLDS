@@ -1,0 +1,6 @@
+X=train.drop('Loan_Status',1)
+X=X.drop('Loan_ID',axis=1)
+Y=train['Loan_Status']
+X=pd.get_dummies(X)
+print(X)
+print(Y)

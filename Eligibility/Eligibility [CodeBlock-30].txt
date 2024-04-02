@@ -1,0 +1,5 @@
+df['Gender'].fillna(df['Gender'].mode()[0],inplace=True)
+df['Dependents'].fillna(df['Dependents'].mode()[0],inplace=True)
+df['Self_Employed'].fillna(df['Self_Employed'].mode()[0],inplace=True)
+df['LoanAmount'].fillna(df['LoanAmount'].mode()[0],inplace=True)
+df['Credit_History'].fillna(df['Credit_History'].mode()[0],inplace=True)
