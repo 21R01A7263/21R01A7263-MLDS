@@ -1,0 +1,1 @@
+train['Self_Employed'].value_counts(normalize=True).plot.bar(title='Self_employee')
