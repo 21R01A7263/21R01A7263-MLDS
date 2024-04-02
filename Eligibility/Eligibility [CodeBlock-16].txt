@@ -1,0 +1,2 @@
+Gender=pd.crosstab(train['Gender'], train['Loan_Status'])
+Gender.div(Gender.sum(1).astype(float),axis = 0).plot(kind='bar',stacked=True,figsize=(4,4))

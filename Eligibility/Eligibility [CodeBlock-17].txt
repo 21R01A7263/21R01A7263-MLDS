@@ -1,0 +1,3 @@
+matrix=train.corr()
+f,ax=plt.subplots(figsize=(9,6))
+sns.heatmap(matrix,vmax=0.8,square=True,cmap="BuPu",annot=True)
