@@ -1,4 +1,4 @@
-data['ndo']=data.ph.apply(lambda x: (100 if (x>=6)
+data['ndo']=data.do.apply(lambda x: (100 if (x>=6)
                                  else(80 if(6>=x>=5.1)
                                  else(60 if(5>=x>=4.1)
                                  else(40 if(4>=x>=3)
