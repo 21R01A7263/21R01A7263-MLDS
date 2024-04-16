@@ -1,0 +1,2 @@
+y=data['wqi']
+x=data[['year']]
