@@ -1,0 +1,2 @@
+data=pd.read_csv('water_dataX.csv',encoding = "ISO-8859-1")
+data.replace('NAN',0)
