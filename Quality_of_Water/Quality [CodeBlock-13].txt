@@ -1,0 +1,5 @@
+data['nbdo']=data.bod.apply(lambda x: (100 if (3>=x>=0)
+                                 else(80 if(6>=x>=3)
+                                 else(60 if(80>=x>=6)
+                                 else(40 if(125>=x>=80)
+                                 else 0)))))
