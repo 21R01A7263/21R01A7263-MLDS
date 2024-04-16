@@ -1,0 +1,5 @@
+data['nec']=data.con.apply(lambda x: (100 if (75>=x>=0)
+                                 else(80 if(150>=x>=75)
+                                 else(60 if(225>=x>=150)
+                                 else(40 if(300>=x>=225)
+                                 else 0)))))
