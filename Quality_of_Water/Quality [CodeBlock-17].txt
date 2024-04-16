@@ -1,0 +1,1 @@
+ag=data.groupby('year')['wqi'].mean()
