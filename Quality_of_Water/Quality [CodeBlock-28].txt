@@ -1,0 +1,9 @@
+import matplotlib.pyplot as plt
+x_axis = data[['year']]
+y_axis = data.wqi
+y1_axis = reg.predict(x_axis)
+plt.scatter(x_axis,y_axis)
+plt.plot(x_axis,y1_axis,color='r')
+plt.title("linear regression")
+
+plt.show()
