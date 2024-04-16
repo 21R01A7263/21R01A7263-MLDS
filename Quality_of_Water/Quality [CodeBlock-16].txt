@@ -1,0 +1,8 @@
+data['wph']=data.npH * 0.165
+data['wdo']=data.ndo * 0.281
+data['wbdo']=data.nbdo * 0.234
+data['wec']=data.nec * 0.009
+data['wna']=data.nna * 0.028
+data['wco']=data.nco * 0.281
+data['wqi']=data.wph+data.wdo+data.wbdo+data.wec+data.wna+data.wco
+data
