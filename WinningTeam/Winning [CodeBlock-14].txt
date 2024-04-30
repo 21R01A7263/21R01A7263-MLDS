@@ -1,0 +1,2 @@
+X = data.drop(['winner'],axis=1)
+y = data['winner']
