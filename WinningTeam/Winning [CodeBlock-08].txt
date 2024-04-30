@@ -1,0 +1,7 @@
+data['team1'] = data['team1'].str.replace('Delhi Daredevils','Delhi Capitals')
+data['team2'] = data['team2'].str.replace('Delhi Daredevils','Delhi Capitals')
+data['winner'] = data['winner'].str.replace('Delhi Daredevils','Delhi Capitals')
+
+data['team1'] = data['team1'].str.replace('Deccan Chargers','Sunrisers Hyderabad')
+data['team2'] = data['team2'].str.replace('Deccan Chargers','Sunrisers Hyderabad')
+data['winner'] = data['winner'].str.replace('Deccan Chargers','Sunrisers Hyderabad')
