@@ -1,0 +1,5 @@
+plt.figure(figsize = (10,6))
+sns.countplot(x='toss_decision',data=data)
+plt.xlabel('Toss Decision',fontsize=12)
+plt.ylabel('Count',fontsize=12)
+plt.title('Toss Decision')
