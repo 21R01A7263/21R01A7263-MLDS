@@ -1,0 +1,2 @@
+data = data.iloc[:,:-1]
+data.dropna(inplace=True)
