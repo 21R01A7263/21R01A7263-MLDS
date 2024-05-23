@@ -1,1 +1,0 @@
-train['Married'].value_counts(normalize=True).plot.bar(title='Married')

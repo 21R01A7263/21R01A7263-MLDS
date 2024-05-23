@@ -1,2 +1,0 @@
-train['Loan_Amount_Term'].fillna(train['Loan_Amount_Term'].mode()[0],inplace=True)
-print(train['Loan_Amount_Term'])

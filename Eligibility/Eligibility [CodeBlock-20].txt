@@ -1,2 +1,0 @@
-train['Married'].fillna(train['Married'].mode()[0],inplace=True)
-print(train['Married'])

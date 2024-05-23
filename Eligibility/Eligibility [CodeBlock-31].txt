@@ -1,2 +1,0 @@
-df.isnull().sum()
-df['Loan_Amount_Term'].fillna(df['Loan_Amount_Term'].mean(),inplace=True)

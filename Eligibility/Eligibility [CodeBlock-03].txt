@@ -1,2 +1,0 @@
-test = pd.read_csv("test.csv")
-test.head()

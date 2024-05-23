@@ -1,2 +1,0 @@
-train['Self_Employed'].fillna(train['Self_Employed'].mode()[0],inplace=True)
-print(train['Self_Employed'])

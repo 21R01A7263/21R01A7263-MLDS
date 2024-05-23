@@ -1,2 +1,0 @@
-train['Gender'].fillna(train['Gender'].mode()[0],inplace=True)
-print(train['Gender'])

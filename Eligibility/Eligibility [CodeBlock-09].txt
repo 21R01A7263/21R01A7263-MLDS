@@ -1,1 +1,0 @@
-train['Credit_History'].value_counts(normalize=True).plot.bar(title='Credit_History')

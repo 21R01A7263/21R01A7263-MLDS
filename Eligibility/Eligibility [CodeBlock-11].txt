@@ -1,1 +1,0 @@
-train['Education'].value_counts(normalize=True).plot.bar(title='Education')

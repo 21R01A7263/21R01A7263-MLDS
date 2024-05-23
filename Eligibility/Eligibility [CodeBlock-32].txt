@@ -1,4 +1,0 @@
-df=df.drop('Loan_ID',axis=1)
-df=pd.get_dummies(df)
-print(X)
-print(df)

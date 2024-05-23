@@ -1,5 +1,0 @@
-from sklearn.linear_model import LogisticRegression
-model=LogisticRegression()
-clf = model.fit(X,Y)
-df = pd.read_csv('test.csv')
-print(df)

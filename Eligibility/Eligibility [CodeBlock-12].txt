@@ -1,1 +1,0 @@
-train['Property_Area'].value_counts(normalize=True).plot.bar(title='Property_Area')

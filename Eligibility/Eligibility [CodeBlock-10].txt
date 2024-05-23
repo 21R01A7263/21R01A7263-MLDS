@@ -1,1 +1,0 @@
-train['Dependents'].value_counts(normalize=True).plot.bar(title='Dependents')
