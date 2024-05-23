@@ -1,5 +1,0 @@
-x = ["city","toss_decision","result","dl_applied"]
-for i in x:
-  print("-----------------------")
-  print(data[i].unique())
-  print(data[i].value_counts())

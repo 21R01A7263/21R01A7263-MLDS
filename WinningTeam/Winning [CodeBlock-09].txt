@@ -1,5 +1,0 @@
-plt.figure(figsize = (10,6))
-sns.countplot(y='winner',data = data, order = data['winner'].value_counts().index)
-plt.xlabel('Wins')
-plt.ylabel('Team')
-plt.title('Number of IPL matches won by each team')

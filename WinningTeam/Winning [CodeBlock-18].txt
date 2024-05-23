@@ -1,2 +1,0 @@
-from sklearn.ensemble import RandomForestClassifier
-model = RandomForestClassifier(n_estimators = 200, min_samples_split=3,max_features = "auto")

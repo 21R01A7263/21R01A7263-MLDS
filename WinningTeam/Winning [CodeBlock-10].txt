@@ -1,5 +1,0 @@
-plt.figure(figsize = (10,6))
-sns.countplot(y='venue',data = data, order = data['venue'].value_counts().iloc[:10].index)
-plt.xlabel('No of matches',fontsize=12)
-plt.ylabel('Venue',fontsize=12)
-plt.title('Total Number of matches played in different stadium')
