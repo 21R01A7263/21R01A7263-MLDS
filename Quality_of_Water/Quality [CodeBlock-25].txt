@@ -1,3 +1,0 @@
-print(x_test)
-a=reg.predict(x_test)
-a

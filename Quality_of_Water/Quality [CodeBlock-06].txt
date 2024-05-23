@@ -1,8 +1,0 @@
-data['temp']=pd.to_numeric(data['temp'],errors='coerce')
-data['do']=pd.to_numeric(data['do'],errors='coerce')
-data['ph']=pd.to_numeric(data['ph'],errors='coerce')
-data['bod']=pd.to_numeric(data['bod'],errors='coerce')
-data['con']=pd.to_numeric(data['con'],errors='coerce')
-data['nn']=pd.to_numeric(data['nn'],errors='coerce')
-data['tc']=pd.to_numeric(data['tc'],errors='coerce')
-data.dtypes

@@ -1,5 +1,0 @@
-data['npH']=data.ph.apply(lambda x: (100 if (8.5>=x>=7)
-                                 else(80 if(8.6>=x>=8.5) or (6.9>=x>=6.8)
-                                 else(60 if(8.8>=x>=8.6) or (6.8>=x>=6.7)
-                                 else(40 if(9>=x>=8.8) or (6.7>=x>=6.5)
-                                 else 0)))))

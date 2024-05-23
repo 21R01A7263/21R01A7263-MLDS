@@ -1,5 +1,0 @@
-data['nco']=data.tc.apply(lambda x: (100 if (5>=x>=0)
-                                 else(80 if(50>=x>=5)
-                                 else(60 if(500>=x>=50)
-                                 else(40 if(10000>=x>=500)
-                                 else 0)))))

@@ -1,2 +1,0 @@
-data.colums = ['station','location','state','temp','do','ph','con','bod','nn','fc','tc','year']
-data

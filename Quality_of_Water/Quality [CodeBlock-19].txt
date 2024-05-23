@@ -1,2 +1,0 @@
-data=ag.reset_index(level=0)
-type(data)
